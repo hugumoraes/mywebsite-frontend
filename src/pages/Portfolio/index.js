@@ -5,7 +5,7 @@ import Header from '../../components/Header';
 function Portfolio() {
   return (
     <>
-      <Header main={false} />
+      <Header />
     </>
   );
 }

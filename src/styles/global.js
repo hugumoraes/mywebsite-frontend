@@ -1,15 +1,19 @@
 import { createGlobalStyle } from 'styled-components';
 
 export default createGlobalStyle`
+
 * {
   margin: 0;
-  padding: 0;
+	padding: 0;
+  border: 0;
   outline: 0;
   box-sizing: border-box;
+  vertical-align: baseline;
 }
 
 html, body, #root {
   min-height: 100%;
+  line-height: 1;
 }
 
 body {
@@ -18,9 +22,26 @@ body {
 }
 
 body, input, button {
-  color: #fff;
+  color: black;
   font-size: 14px;
   font-family: Arial, Helvetica, sans-serif;
+}
+
+ol, ul {
+	list-style: none;
+}
+
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
 }
 
 button {
