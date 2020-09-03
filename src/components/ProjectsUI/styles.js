@@ -3,6 +3,10 @@ import styled from 'styled-components';
 export const StyledDiv = styled.div`
   width: 100%;
 
+  &:not(:first-child) {
+    margin-top: 4rem;
+  }
+
   .h1 {
     position: relative;
     display: flex;
@@ -61,7 +65,7 @@ export const StyledDiv = styled.div`
       justify-content: start;
       padding: 2rem;
 
-      button {
+      a {
         display: flex;
         flex-direction: row;
         align-items: end;
@@ -70,6 +74,7 @@ export const StyledDiv = styled.div`
         font-size: 1.2rem;
         background: #d3d3d3;
         border-radius: 4px;
+        color: black;
 
         &:hover {
           background: #a9a9a9;

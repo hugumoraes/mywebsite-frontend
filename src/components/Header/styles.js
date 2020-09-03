@@ -6,7 +6,7 @@ export const StyledHeader = styled.header`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 3.2rem;
+  min-height: 3.2rem;
 
   ul {
     display: flex;
