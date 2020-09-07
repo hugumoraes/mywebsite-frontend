@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-import { StyledHeader, StyledLi } from './styles';
+import { StyledHeader, StyledLi, StyledButton } from './styles';
 
 export default function Header() {
+  const [shown, setShown] = useState(false);
+
   const headerLinks = [
     {
       name: 'Home',
@@ -23,8 +25,14 @@ export default function Header() {
     },
   ];
 
+  const handleMenu = (e) => {
+    e.preventDefault();
+
+    setShown(!shown);
+  };
+
   return (
-    <StyledHeader>
+    <StyledHeader shown={shown}>
       <ul>
         {headerLinks.map((link) => (
           <StyledLi key={link.name}>
@@ -32,6 +40,7 @@ export default function Header() {
           </StyledLi>
         ))}
       </ul>
+      <StyledButton onClick={handleMenu}>Menu</StyledButton>
     </StyledHeader>
   );
 }

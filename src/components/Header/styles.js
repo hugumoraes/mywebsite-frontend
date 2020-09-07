@@ -1,7 +1,9 @@
 import styled from 'styled-components';
 
-export const StyledHeader = styled.header`
-  background: #0e0e0e;
+export const StyledHeader = styled.header.attrs((props) => ({
+  shown: props.shown,
+}))`
+  /* background: #0e0e0e;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -12,6 +14,24 @@ export const StyledHeader = styled.header`
     display: flex;
     flex-direction: row;
     list-style: none;
+  } */
+
+  background: #0e0e0e;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  height: ${(props) => (props.shown ? '12rem' : '2rem')};
+
+  li {
+    display: ${(props) => (props.shown ? 'flex' : 'none')};
+  }
+
+  button {
+    display: ${(props) => (props.shown ? 'none' : 'inline-block')};
   }
 `;
 
@@ -30,4 +50,9 @@ export const StyledLi = styled.li`
       border-bottom: 4px solid rgb(0, 255, 255);
     }
   }
+`;
+
+export const StyledButton = styled.button`
+  background: #0e0e0e;
+  color: white;
 `;
