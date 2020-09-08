@@ -1,17 +1,8 @@
 import styled from 'styled-components';
 
-export const StyledHeader = styled.header.attrs((props) => ({
+export const Container = styled.header.attrs((props) => ({
   shown: props.shown,
 }))`
-  /* background: #0e0e0e;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: 3.2rem;
-
-   */
-
   background: #0e0e0e;
   position: relative;
 
@@ -19,6 +10,8 @@ export const StyledHeader = styled.header.attrs((props) => ({
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  margin-bottom: ${(props) => (props.shown ? '4rem' : '0')};
 
   width: 100%;
   height: ${(props) => (props.shown ? '12rem' : '3.2rem')};
@@ -54,7 +47,7 @@ export const StyledHeader = styled.header.attrs((props) => ({
   }
 `;
 
-export const StyledLi = styled.li`
+export const List = styled.li`
   padding: 8px 12px;
   margin: 8px 4px;
 

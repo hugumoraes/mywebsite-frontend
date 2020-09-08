@@ -4,7 +4,7 @@ import Header from '../../components/Header';
 
 import { Container } from './styles';
 
-function Portfolio() {
+export default function Contact() {
   return (
     <Container>
       <Header />
@@ -12,5 +12,3 @@ function Portfolio() {
     </Container>
   );
 }
-
-export default Portfolio;

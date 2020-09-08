@@ -2,9 +2,9 @@ import React from 'react';
 
 import Header from '../../components/Header';
 
-import { Container } from './styles';
+import { Container } from './styles.js';
 
-function Portfolio() {
+export default function Blog() {
   return (
     <Container>
       <Header />
@@ -12,5 +12,3 @@ function Portfolio() {
     </Container>
   );
 }
-
-export default Portfolio;

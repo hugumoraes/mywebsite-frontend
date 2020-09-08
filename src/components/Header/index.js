@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-import { StyledHeader, StyledLi, StyledButton } from './styles';
+import { Container, List, StyledButton } from './styles';
 
 export default function Header() {
   const [shown, setShown] = useState(false);
@@ -21,7 +21,7 @@ export default function Header() {
     },
     {
       name: 'Contact',
-      href: '/contact',
+      href: '/contact-me',
     },
   ];
 
@@ -32,15 +32,15 @@ export default function Header() {
   };
 
   return (
-    <StyledHeader shown={shown}>
+    <Container shown={shown}>
       <ul>
         {headerLinks.map((link) => (
-          <StyledLi key={link.name}>
+          <List key={link.name}>
             <Link to={link.href}>{link.name}</Link>
-          </StyledLi>
+          </List>
         ))}
       </ul>
       <StyledButton onClick={handleMenu}>{shown ? 'X' : 'Menu'}</StyledButton>
-    </StyledHeader>
+    </Container>
   );
 }
