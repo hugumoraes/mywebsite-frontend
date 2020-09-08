@@ -6,7 +6,11 @@ const StyledContainer = styled.div`
   align-items: center;
   margin: 0 auto;
   margin-top: 2rem;
-  width: 1200px;
+  width: 100%;
+
+  @media (min-width: 1200px){ 
+    width: 1200px;
+  }
 `;
 
 export default StyledContainer;

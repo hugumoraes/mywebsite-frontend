@@ -40,7 +40,7 @@ export default function Header() {
           </StyledLi>
         ))}
       </ul>
-      <StyledButton onClick={handleMenu}>Menu</StyledButton>
+      <StyledButton onClick={handleMenu}>{shown ? 'X' : 'Menu'}</StyledButton>
     </StyledHeader>
   );
 }

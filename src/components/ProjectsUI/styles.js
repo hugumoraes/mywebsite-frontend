@@ -31,20 +31,40 @@ export const StyledDiv = styled.div`
   }
 
   .grid-container {
-    display: grid;
-    grid-template-columns: 32% 32% 32%;
-    grid-column-gap: 2%;
-    grid-row-gap: 1.4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @media (min-width: 720px) {
+      display: grid;
+      justify-items: center;
+      grid-template-columns: 50% 50%;
+      grid-column-gap: 0;
+      grid-row-gap: 1.4rem;
+    }
+
+    @media (min-width: 1200px) {
+      display: grid;
+      grid-template-columns: 32% 32% 32%; 
+      grid-column-gap: 2%;
+      grid-row-gap: 1.4rem;
+    }
   }
 
   .item {
     display: flex;
     flex-direction: column;
-    height: 480px;
+
+    width: min(92%, max(33vw, 320px));
+    min-height: 480px;
+
     background: white;
     box-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    margin-bottom: 2rem;
 
     img {
+      border-radius: 4px 4px 0 0;
       width: 100%;
       height: 220px;
       background: red;
@@ -85,6 +105,10 @@ export const StyledDiv = styled.div`
           height: 24px;
         }
       }
+    }
+
+    @media (min-width: 420px) {
+
     }
   }
 `;

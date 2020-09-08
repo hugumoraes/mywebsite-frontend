@@ -10,13 +10,10 @@ export const StyledHeader = styled.header.attrs((props) => ({
   justify-content: center;
   min-height: 3.2rem;
 
-  ul {
-    display: flex;
-    flex-direction: row;
-    list-style: none;
-  } */
+   */
 
   background: #0e0e0e;
+  position: relative;
 
   display: flex;
   flex-direction: column;
@@ -24,14 +21,36 @@ export const StyledHeader = styled.header.attrs((props) => ({
   justify-content: center;
 
   width: 100%;
-  height: ${(props) => (props.shown ? '12rem' : '2rem')};
+  height: ${(props) => (props.shown ? '12rem' : '3.2rem')};
 
   li {
     display: ${(props) => (props.shown ? 'flex' : 'none')};
   }
 
   button {
-    display: ${(props) => (props.shown ? 'none' : 'inline-block')};
+    position: ${(props) => (props.shown ? 'absolute' : 'relative')};
+    border-radius: ${(props) => (props.shown ? '50%' : '4px')};
+    padding: 4px 8px;
+    bottom: ${(props) => (props.shown ? '-36px' : '0')};
+    font-size: 1.25rem;
+  }
+
+  @media (min-width: 420px) {
+    height: 3.2rem;
+
+    button {
+      display: none;
+    }
+
+    ul {
+      display: flex;
+      flex-direction: row;
+      list-style: none;
+
+      li {
+        display: inline-block;
+      }
+    }
   }
 `;
 

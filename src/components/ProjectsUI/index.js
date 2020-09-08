@@ -15,6 +15,15 @@ export default function ProjectsUI() {
       github: 'https://github.com/hugumoraes/ui-clone-twitter',
       demo: 'https://relaxed-goldwasser-41a778.netlify.app',
     },
+    {
+      id: 2,
+      name: 'Twitter UI Clone',
+      img: 'https://i.imgur.com/jUzySjx.jpg',
+      description:
+        'Twitter interface clone using Typescript, React and Styled Components.',
+      github: 'https://github.com/hugumoraes/ui-clone-twitter',
+      demo: 'https://relaxed-goldwasser-41a778.netlify.app',
+    },
   ];
 
   return (
