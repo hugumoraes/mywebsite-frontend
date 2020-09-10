@@ -7,10 +7,7 @@ import Main from './pages/Main';
 import Portfolio from './pages/Portfolio';
 import Blog from './pages/Blog';
 import Contact from './pages/Contact';
-
-function Teste() {
-  return <h1>Teste</h1>;
-}
+import Blogpost from './pages/Blogpost';
 
 export default function Routes() {
   const [blogposts, setBlogposts] = useState([]);
@@ -31,7 +28,7 @@ export default function Routes() {
           <Route
             key={blogpost._id}
             path={`/${blogpost._id}`}
-            component={Teste}
+            render={() => <Blogpost data={blogpost} />}
           />
         ))}
       </Switch>
