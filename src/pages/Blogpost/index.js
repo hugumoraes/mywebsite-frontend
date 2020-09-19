@@ -6,25 +6,18 @@ import pt from 'date-fns/locale/pt-BR';
 import { Container, Post } from './styles';
 
 import Header from '../../components/Header';
+import Footer from '../../components/Footer';
 
 export default function Blogpost({ data }) {
   const maxWidth = window.innerWidth;
 
   const renderers = {
-    image: ({
-      alt,
-      src,
-      title,
-    }: {
-      alt?: string,
-      src?: string,
-      title?: string,
-    }) => (
+    image: ({ alt, src, title }) => (
       <img
         alt={alt}
         src={src}
         title={title}
-        style={{ maxWidth: Math.min(420, maxWidth) }}
+        style={{ maxWidth: Math.min(420, maxWidth), padding: '16px' }}
       />
     ),
   };
@@ -48,6 +41,8 @@ export default function Blogpost({ data }) {
           renderers={renderers}
         />
       </Post>
+
+      <Footer />
     </Container>
   );
 }

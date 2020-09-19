@@ -51,4 +51,8 @@ button {
 a {
     text-decoration: none;
 }
+
+:root {
+  --primary-grey: grey;
+}
 `;
