@@ -9,7 +9,7 @@ interface Blogpost {
   content: string;
   published: string;
   createdAt: string;
-  cover: any;
+  cover: string;
 }
 
 interface Props {
@@ -27,10 +27,7 @@ const BlogUI: React.FC<Props> = ({ blogposts }) => {
       <div className="grid-container">
         {blogposts.map((blogpost) => (
           <div className="item" key={blogpost.id}>
-            <img
-              src={`https://mywebsite-strapi-backend.herokuapp.com${blogpost.cover.url}`}
-              alt="alt"
-            />
+            <img src={`${blogpost.cover}`} alt="alt" />
             <h1>{blogpost.title.substring(0, 75)}</h1>
             <p>{blogpost.content.substring(0, 100)}</p>
             <Link to={`/${blogpost.id}`}>See post</Link>

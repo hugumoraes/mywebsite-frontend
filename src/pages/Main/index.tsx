@@ -14,7 +14,7 @@ interface IBlogpost {
   content: string;
   published: string;
   createdAt: string;
-  cover: any;
+  cover: string;
 }
 
 const Main: React.FC = () => {
