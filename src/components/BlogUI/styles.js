@@ -42,6 +42,8 @@ export const StyledDiv = styled.div`
     flex-direction: column;
     align-items: center;
 
+    width: 100%;
+
     @media (min-width: 720px) {
       display: grid;
       justify-items: center;

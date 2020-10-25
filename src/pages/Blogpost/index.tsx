@@ -8,16 +8,39 @@ import { Container, Post } from './styles';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 
-export default function Blogpost({ data }) {
+import CodeBlock from '../../util/CodeBlock';
+
+interface IBlogpost {
+  id: string;
+  title: string;
+  content: string;
+  published: string;
+  createdAt: string;
+}
+
+interface Props {
+  data: IBlogpost;
+}
+
+const Blogpost: React.FC<Props> = ({ data }) => {
   const maxWidth = window.innerWidth;
 
   const renderers = {
-    image: ({ alt, src, title }) => (
+    code: CodeBlock,
+    image: ({
+      alt,
+      src,
+      title,
+    }: {
+      alt?: string;
+      src?: string;
+      title?: string;
+    }) => (
       <img
         alt={alt}
         src={src}
         title={title}
-        style={{ maxWidth: Math.min(420, maxWidth), padding: '16px' }}
+        style={{ maxWidth: Math.min(420, maxWidth), margin: '8px 0' }}
       />
     ),
   };
@@ -29,14 +52,14 @@ export default function Blogpost({ data }) {
       <Header />
 
       <Post>
-        <h1>{data.Title}</h1>
+        <h1>{data.title}</h1>
         <span>
           {format(date, "dd 'de' MMMM' às ' HH:mm", {
             locale: pt,
           })}
         </span>
         <ReactMarkdown
-          source={data.Content}
+          source={data.content}
           escapeHtml={false}
           renderers={renderers}
         />
@@ -45,4 +68,6 @@ export default function Blogpost({ data }) {
       <Footer />
     </Container>
   );
-}
+};
+
+export default Blogpost;

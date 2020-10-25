@@ -9,11 +9,19 @@ import Blog from './pages/Blog';
 import Contact from './pages/Contact';
 import Blogpost from './pages/Blogpost';
 
-export default function Routes() {
-  const [blogposts, setBlogposts] = useState([]);
+interface IBlogpost {
+  id: string;
+  title: string;
+  content: string;
+  published: string;
+  createdAt: string;
+}
+
+const Routes: React.FC = () => {
+  const [blogposts, setBlogposts] = useState<IBlogpost[]>([]);
 
   useEffect(() => {
-    strapi.get('/').then((response) => setBlogposts(response.data));
+    strapi.get('/posts').then((response) => setBlogposts(response.data));
   }, []);
 
   return (
@@ -26,12 +34,14 @@ export default function Routes() {
 
         {blogposts.map((blogpost) => (
           <Route
-            key={blogpost._id}
-            path={`/${blogpost._id}`}
+            key={blogpost.id}
+            path={`/${blogpost.id}`}
             render={() => <Blogpost data={blogpost} />}
           />
         ))}
       </Switch>
     </BrowserRouter>
   );
-}
+};
+
+export default Routes;
