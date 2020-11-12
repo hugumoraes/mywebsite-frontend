@@ -54,5 +54,7 @@ a {
 
 :root {
   --primary-grey: grey;
+  --primary-black: #0e0e0e;
+  --secondary-black: #292626;
 }
 `;

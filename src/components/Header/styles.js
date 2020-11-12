@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const Container = styled.header.attrs((props) => ({
   shown: props.shown,
 }))`
-  background: #0e0e0e;
+  background: var(--primary-black);
   position: relative;
 
   display: flex;

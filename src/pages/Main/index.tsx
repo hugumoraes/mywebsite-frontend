@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import strapi from '../../services/strapi';
 
 import Header from '../../components/Header';
+import HeaderBio from '../../components/HeaderBio';
 import Footer from '../../components/Footer';
 import Container from '../../components/Container';
 import ProjectsUI from '../../components/ProjectsUI';
@@ -29,7 +30,9 @@ const Main: React.FC = () => {
   return (
     <>
       <Header />
+      <HeaderBio />
       <Container>
+        <h1>Running using AWS Pipeline</h1>
         <ProjectsUI />
         <BlogUI blogposts={blogposts} />
       </Container>
