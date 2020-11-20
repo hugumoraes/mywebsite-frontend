@@ -4,6 +4,9 @@ import strapi from '../../services/strapi';
 
 import Header from '../../components/Header';
 import HeaderBio from '../../components/HeaderBio';
+
+import PortfolioGrid from '../../components/PortfolioGrid';
+
 import Footer from '../../components/Footer';
 import Container from '../../components/Container';
 import ProjectsUI from '../../components/ProjectsUI';
@@ -32,9 +35,10 @@ const Main: React.FC = () => {
       <Header />
       <HeaderBio />
       <Container>
-        <h1>Running using AWS Pipeline</h1>
+        <PortfolioGrid />
+
         <ProjectsUI />
-        <BlogUI blogposts={blogposts} />
+        {blogposts.length ? <BlogUI blogposts={blogposts} /> : <h1>Loading</h1>}
       </Container>
       <Footer />
     </>

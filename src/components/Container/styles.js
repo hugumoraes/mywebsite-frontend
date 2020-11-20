@@ -5,7 +5,6 @@ const StyledContainer = styled.div`
   flex-direction: column;
   align-items: center;
   margin: 0 auto;
-  margin-top: 250px;
   width: 100%;
 
   @media (min-width: 1200px) {

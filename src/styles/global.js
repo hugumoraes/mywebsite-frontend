@@ -24,7 +24,7 @@ body {
 body, input, button {
   color: black;
   font-size: 14px;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Crimson Text', Arial, Helvetica, sans-serif;
 }
 
 ol, ul {
@@ -50,9 +50,11 @@ button {
 
 a {
     text-decoration: none;
+    
 }
 
 :root {
+  --primary-white: #f0f0f0;
   --primary-grey: grey;
   --primary-black: #0e0e0e;
   --secondary-black: #292626;

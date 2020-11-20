@@ -6,37 +6,61 @@ export const Container = styled.div`
 
   background: var(--secondary-black);
   width: 100%;
-  height: calc(180px + 3.2rem);
+  height: calc(480px + 3.2rem);
 `;
 
 export const CenterDiv = styled.div`
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: center;
 
-  .image {
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
-    width: 480px;
-    height: 360px;
+  width: 1200px;
 
-    background: white;
+  h1 {
+    color: var(--primary-white);
+    font-weight: bold;
+    font-size: 48px;
   }
 
-  .bio {
+  p {
+    font-size: 36px;
+    color: var(--primary-white);
+  }
+`;
+
+export const MediaRow = styled.div`
+  display: flex;
+  flex-direction: row;
+  margin-top: 12px;
+
+  .socialMedia {
+    cursor: pointer;
+    background: rgba(0, 0, 0, 0.15);
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
 
-    height: 360px;
-    flex: 1;
+    width: 60px;
+    height: 60px;
 
-    text-align: center;
-
-    h1 {
-      color: white;
+    svg {
+      width: 18px;
+      height: 18px;
+      fill: white;
     }
   }
 
-  padding-top: 3.2rem;
-  width: 1200px;
+  .socialMedia:hover {
+    background: rgba(0, 0, 0, 0.2);
+  }
+
+  .socialMedia:first-child {
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+  }
+
+  .socialMedia:last-child {
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+  }
 `;
