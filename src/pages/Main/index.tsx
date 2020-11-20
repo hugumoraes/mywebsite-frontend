@@ -9,7 +9,6 @@ import PortfolioGrid from '../../components/PortfolioGrid';
 
 import Footer from '../../components/Footer';
 import Container from '../../components/Container';
-import ProjectsUI from '../../components/ProjectsUI';
 import BlogUI from '../../components/BlogUI/index';
 
 interface IBlogpost {
@@ -37,7 +36,6 @@ const Main: React.FC = () => {
       <Container>
         <PortfolioGrid />
 
-        <ProjectsUI />
         {blogposts.length ? <BlogUI blogposts={blogposts} /> : <h1>Loading</h1>}
       </Container>
       <Footer />

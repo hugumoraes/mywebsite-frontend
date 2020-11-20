@@ -1,45 +1,55 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
-export const Container = styled.div`
-  margin-top: 24px;
+interface ItemI {
+  hover?: number;
+}
 
+const Item = css<ItemI>`
+  display: flex;
+  flex-direction: column;
+  position: relative;
   width: 100%;
-  display: grid;
-  grid-template-columns: 392px 392px 392px;
-  grid-template-rows: 240px 240px 240px 240px 240px;
-  grid-gap: 12px;
+  height: 100%;
 
-  .item {
-    display: flex;
-    flex-direction: column;
-    position: relative;
+  background: white;
+
+  .color {
+    position: absolute;
     width: 100%;
     height: 100%;
-
-    img {
-      position: absolute;
-      top: 0;
-      left: 0;
-      -webkit-transition: position 2s;
-      transition: position 2s;
-      width: 100%;
-      height: 100%;
-      transition: 0.4s;
-      transition: margin 0.4s width 0.4s height 0.4s;
-    }
+    background: ${({ hover }) => hover === 1 && '#1da1f3'};
+    background: ${({ hover }) => hover === 3 && '#f3cf6f'};
+    background: ${({ hover }) => hover === 4 && '#fe5f99'};
+    background: ${({ hover }) => hover === 6 && '#64105b'};
+    transition: 0.4s ease;
   }
 
-  .item1 {
-    grid-column-start: 1;
-    grid-column-end: 3;
-    grid-row-start: 1;
-    grid-row-end: 3;
-
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    -webkit-transition: position 2s;
+    transition: position 2s;
+    width: 100%;
+    height: 100%;
     transition: 0.4s;
+    transition: margin 0.4s width 0.4s height 0.4s;
   }
 
-  .item1:hover {
-    background: white;
+  transition: 0.4s;
+`;
+
+export const Item1 = styled.div<ItemI>`
+  ${Item}
+
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 3;
+
+  transition: 0.4s;
+
+  &:hover {
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
 
     img {
@@ -52,38 +62,54 @@ export const Container = styled.div`
       height: 50%;
     }
   }
+`;
 
-  .item2 {
-    background: transparent;
-  }
+export const Item2 = styled.div<ItemI>`
+  ${Item}
 
-  .item3 {
-    background: blue;
-    grid-row-start: 2;
-    grid-row-end: 4;
-  }
+  background: transparent !important;
+`;
 
-  .item4 {
-    background: yellow;
+export const Item3 = styled.div<ItemI>`
+  ${Item}
 
-    grid-column-start: 1;
-    grid-column-end: 2;
+  grid-row-start: 2;
+  grid-row-end: 4;
+`;
 
-    grid-row-start: 3;
-    grid-row-end: 5;
-  }
+export const Item4 = styled.div<ItemI>`
+  ${Item}
 
-  .item5 {
-    background: transparent;
-  }
+  grid-column-start: 1;
+  grid-column-end: 2;
 
-  .item6 {
-    background: purple;
-    grid-column-start: 2;
-    grid-column-end: 4;
-    grid-row-start: 4;
-    grid-row-end: 6;
-  }
+  grid-row-start: 3;
+  grid-row-end: 5;
+`;
+
+export const Item5 = styled.div<ItemI>`
+  ${Item}
+
+  background: transparent;
+`;
+
+export const Item6 = styled.div<ItemI>`
+  ${Item}
+
+  grid-column-start: 2;
+  grid-column-end: 4;
+  grid-row-start: 4;
+  grid-row-end: 6;
+`;
+
+export const Container = styled.div`
+  margin-top: 24px;
+
+  width: 100%;
+  display: grid;
+  grid-template-columns: 392px 392px 392px;
+  grid-template-rows: 240px 240px 240px 240px 240px;
+  grid-gap: 12px;
 `;
 
 export const ProjectInfo = styled.div`
@@ -128,6 +154,11 @@ export const ProjectInfo = styled.div`
   .bio {
     h1 {
       font-size: 32px;
+      color: var(--primary-black);
+    }
+
+    p {
+      font-size: 24px;
       color: var(--primary-black);
     }
   }

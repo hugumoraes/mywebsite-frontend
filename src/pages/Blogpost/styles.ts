@@ -36,7 +36,7 @@ export const Post = styled.div`
 
   span {
     font-size: 1rem;
-    color: var(--primary-grey);
+    color: var(--primary-black);
   }
 
   @media (max-width: 1920px) and (min-width: 1366px) {

@@ -46,7 +46,7 @@ export const MediaRow = styled.div`
     svg {
       width: 18px;
       height: 18px;
-      fill: white;
+      fill: var(--primary-white);
     }
   }
 

@@ -22,7 +22,7 @@ export const StyledDiv = styled.div`
     margin-bottom: 2rem;
 
     h1 {
-      background: #dfdfdf;
+      background: var(--primary-white);
       padding: 0 12px;
       margin: 0 auto;
       z-index: 20;

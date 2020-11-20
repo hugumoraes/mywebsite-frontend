@@ -17,7 +17,7 @@ html, body, #root {
 }
 
 body {
-  background: #DFDFDF;
+  background: #f5f5f5;
   -webkit-font-smoothing: antialiased !important;
 }
 
@@ -54,8 +54,7 @@ a {
 }
 
 :root {
-  --primary-white: #f0f0f0;
-  --primary-grey: grey;
+  --primary-white: #f5f5f5;
   --primary-black: #0e0e0e;
   --secondary-black: #292626;
 }
